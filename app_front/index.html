@@ -1,0 +1,339 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <!-- Required meta tags -->
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
+        <meta name="description" content="Sistema de Previsão de Insuficiência Cardíaca">
+        <meta name="keywords" content="">
+        <meta name="author" content="Codescandy">
+        
+        <title>Sistema de Previsão de Insuficiência Cardíaca</title>
+        <!-- Favicon icon-->
+        <link rel="shortcut icon" type="image/x-icon" href="assets/images/logo_fav_atmos.png">
+
+        <!-- Libs CSS -->
+        <link rel="stylesheet" href="assets/libs/bootstrap-icons/font/bootstrap-icons.css">
+        <link href="https://cdn.datatables.net/v/dt/dt-1.13.6/datatables.min.css" rel="stylesheet">
+
+        <!-- Theme CSS -->
+        <link rel="stylesheet" href="assets/css/theme.min.css">
+        <link href="https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/17.0.12/css/intlTelInput.css" rel="stylesheet" />
+
+        <!-- JS -->
+        <script src="https://kit.fontawesome.com/4ba02da364.js" crossorigin="anonymous"></script>
+        <script src="assets/libs/jquery/dist/jquery.min.js"></script>
+        <script src="assets/libs/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+        <script src="assets/libs/jquery-slimscroll/jquery.slimscroll.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.4/jquery.min.js" type="text/javascript"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.mask/1.14.10/jquery.mask.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
+        <script src="https://cdn.datatables.net/v/dt/dt-1.13.6/datatables.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/17.0.12/js/intlTelInput.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.mask/1.14.11/jquery.mask.js"></script>
+
+        <script src="assets/js/theme.min.js"></script>
+        <script src="assets/js/js_index.js"></script>
+
+    </head>
+
+    <body style="display: grid; grid-template-rows: 1fr auto; min-height: 100vh; margin: 0; "> 
+        <nav class="navbar navbar-expand-lg navbar-default position-sticky border-3 border-top border-primary bg-dark navbar-dark">
+            <div class="container">
+                <a class="navbar-brand @@brandLogo" href="index.html"><img src="assets/images/Logo_beta_branco.png" alt="" style="zoom:10%"></a>
+                <button class="navbar-toggler collapsed" type="button" data-bs-toggle="collapse"
+                    data-bs-target="#navbar-default" aria-controls="navbar-default" aria-expanded="false"
+                    aria-label="Toggle navigation">
+                    <span class="icon-bar top-bar mt-0"></span>
+                    <span class="icon-bar middle-bar"></span>
+                    <span class="icon-bar bottom-bar"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbar-default">
+                    <button class="navbar-toggler collapsed" type="button" data-bs-toggle="collapse"
+                        data-bs-target="#navbar-default" aria-controls="navbar-default" aria-expanded="false"
+                        aria-label="Toggle navigation">
+                        <i class="fas fa-times"></i>
+                    </button>
+                    <ul class="navbar-nav ms-auto me-lg-3 ">
+                        <li class="nav-item dropdown disabled">
+                            <a class="nav-link d-lg-none" href="#">
+                                Menu
+                            </a>
+                        </li>
+                        <li class="nav-item dropdown dropstart">
+                            <a class="nav-link " href="#" id="menu-7" data-bs-toggle="dropdown" aria-haspopup="true"
+                                aria-expanded="false">
+                                Docs
+                            </a>
+                            <ul class="dropdown-menu dropdown-menu-arrow  dropdown-menu-md  " aria-labelledby="menu-7">
+                                <li>
+                                    <a class="dropdown-list-group-item" href="http://127.0.0.1:5001/openapi/swagger" target="_blank">
+                                        <div class="d-flex align-items-center">
+                                            <span class="me-3">
+                                                <i class="bi bi-file-text-fill font-24"></i>
+                                            </span>
+                                            <div>
+                                                <h5 class="mb-0">Documentação App</h5>
+                                                <span class="font-12 text-muted">Swaggar da API</span>
+                                            </div>
+                                        </div>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a class="dropdown-list-group-item" href="https://www.kaggle.com/datasets/fedesoriano/heart-failure-prediction" target="_blank">
+                                        <div class="d-flex align-items-center">
+                                            <span class="me-3">
+                                                <i class="bi bi-file-text-fill font-24"></i>
+                                            </span>
+                                            <div>
+                                                <h5 class="mb-0">DataSet</h5>
+                                                <span class="font-12 text-muted">Link do Dataset utilizado para criação do sistema.</span>
+                                            </div>
+                                        </div>
+                                    </a>
+                                </li>                               
+                            </ul>
+                        </li>
+                    </ul>
+                    <div class="header-btn ">
+                        <a class="btn btn-primary btn-sm" href="https://github.com/JulianaPereiraAdler/SprintIV.git">GitHub</a>
+                    </div>
+                </div>
+
+            </div>
+        </nav>
+
+        <!-- pageheader section -->
+        <div class="bg-shape bg-dark">
+            <div class="container">
+                <div class="row">
+                    <div class="col-xl-12 col-lg-12 col-md-12 col-12">
+                        <div class="pt-lg-2 pb-lg-12 pt-5 pb-0 mb-10"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- dashboard nav -->
+        <div class="pb-4 mt-lg-n18 mt-n10">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-3 col-md-4 col-12">
+                        <nav class="navbar navbar-expand-md navbar-light dashboard-nav mb-3 mb-lg-0 shadow-sm">
+                            <a class="d-xl-none d-lg-none d-md-none text-inherit  fw-bold" href="#">Menu</a>
+                            <button class="navbar-toggler d-md-none icon-shape icon-sm rounded bg-primary text-light"
+                                type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown"
+                                aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+                                <span class="fas fa-bars"></span>
+                            </button>
+                            <div class="collapse navbar-collapse" id="navbarNavDropdown">
+                                <div class="navbar-nav flex-column w-100 ">
+                                    <div class="py-4 p-md-4">
+                                        <span class="heading ">Cadastro</span>
+                                        <ul class="list-unstyled mb-4 mt-2">
+                                            <li class="nav-item active">
+                                                <a class="nav-link" href="" data-div_scroll="card_sobre">Sobre o sistema</a>
+                                            </li>
+                                            <li class="nav-item ">
+                                                <a class="nav-link" href="" data-div_scroll="card_diagnostico">Diagnosticar novo paciente</a>
+                                            </li>
+                                            <li class="nav-item ">
+                                                <a class="nav-link" href="" data-div_scroll="card_resultado">Histórico de Diagnosticos</a>
+                                            </li>
+                                        </ul>
+                                        
+                                    </div>
+                                </div>
+                            </div>
+                        </nav>
+                    </div>
+                    <!-- dashboard nav -->
+                    <div class="col-lg-9 col-md-8 col-12 div_principal" style=" overflow-y: scroll; height: 80vh;">
+                        <!-- card DIQ-->
+                        <div class="card rounded-3 mb-4 shadow-sm card_sobre " >
+                            <!-- card header -->
+                            <div class="card-header bg-white p-4">
+                                <h3 class="mb-0 h4">Previsão de Insuficiência Cardíaca: Uma Ferramenta Baseada em Análise de Dados</h3>
+                            </div>
+                            <!-- card body -->
+                            <div class="card-body p-4">
+                                
+                                <div class="mb-3 col-12 col-md-12">
+                                    <p style="font-size:14px; margin-bottom:10px;">
+                                        As doenças cardiovasculares (DCVs) representam a principal causa de morte global, sendo responsáveis por aproximadamente 17,9 milhões de óbitos por ano, o que corresponde a 31% 
+                                        de todas as mortes ao redor do mundo. A insuficiência cardíaca, frequentemente resultante das DCVs, pode ser identificada através da análise de dados, proporcionando uma ferramenta 
+                                        essencial para diagnóstico precoce e prevenção de mortes prematuras. 
+                                    </p>
+                                    <div class="col-12 col-md-12">
+                                        <h5 class="mb-3 mt-3"> Sobre a ferramenta</h5>
+                                    </div>
+                                    <p style="font-size:14px; margin-bottom:10px;">
+                                        Este aplicativo utiliza um conjunto de dados, composto por 918 observações, resultantes da combinação de cinco conjuntos de dados distintos. Esses dados incluem 11 características
+                                         essenciais que ajudam na predição de doenças cardíacas:
+                                    </p>
+                                    <li style="font-size:14px;"><b>Idade: </b>A idade do paciente em anos.</li>
+                                    <li style="font-size:14px;"><b>Sexo: </b>O sexo do paciente [M: Masculino, F: Feminino].</li>
+                                    <li style="font-size:14px;"><b>Tipo de Dor no Peito: </b>Inclui Angina Típica (TA), Angina Atípica (ATA), Dor Não Anginal (NAP) e Assintomático (ASY).</li>
+                                    <li style="font-size:14px;"><b>Pressão Arterial em Repouso: </b>Medida em mm Hg.</li>
+                                    <li style="font-size:14px;"><b>Colesterol: </b>Medido em mm/dl.</li>
+                                    <li style="font-size:14px;"><b>Glicemia em Jejum: </b>Indica diabetes se > 120 mg/dl, se não 0.</li>
+                                    <li style="font-size:14px;"><b>ECG em Repouso: </b> Inclui normal, anormalidades de onda ST-T, e hipertrofia ventricular esquerda.</li>
+                                    <li style="font-size:14px;"><b>Frequência Cardíaca Máxima: </b>Valor numérico entre 60 e 202.</li>
+                                    <li style="font-size:14px;"><b>Angina Induzida por Exercício: </b>Indica a presença ou ausência de angina.</li>
+                                    <li style="font-size:14px;"><b>Oldpeak: </b>Depressão do segmento ST medida em milímetros.</li>
+                                    <li style="font-size:14px; margin-bottom:10px;"><b>Inclinação do Segmento ST: </b>Classificado como ascendente, plano ou descendente.</li>
+                                    <p style="font-size:14px; margin-bottom:10px;">
+                                        Este conjunto de dados foi criado a partir da combinação de informações provenientes de diversas fontes, incluindo o Instituto Húngaro de Cardiologia, hospitais universitários na Suíça, 
+                                        e o Centro Médico da VA em Long Beach e na Cleveland Clinic Foundation.
+                                    </p>
+                                    <div class="col-12 col-md-12">
+                                        <h5 class="mb-3 mt-3"> Objetivo</h5>
+                                    </div>
+                                    <p style="font-size:14px; margin-bottom:10px;">
+                                        O nosso objetivo é oferecer uma ferramenta de análise de dados precisa e eficaz que possa auxiliar profissionais de saúde na prevenção e tratamento de doenças cardíacas. Acreditamos que, 
+                                        através desta aplicação, podemos fazer uma diferença significativa na gestão da saúde cardiovascular.
+                                    </p>
+                                </div>
+
+                            </div>
+                        </div>
+
+                        <!-- card DIAGNOSTICO -->
+                        <div class="card rounded-3 mb-4 shadow-sm card_diagnostico" >
+                            <!-- card header -->
+                            <div class="card-header bg-white p-4">
+                                <h3 class="mb-0 h4">Diagnosticar</h3>
+                            </div>
+                            <!-- card body -->
+                            <div class="card-body p-4">
+                                <div>
+                                    <div class="div_ficha_cadastral div_info" data-cotitular="0" >
+                                        <form class="row">
+                                            <div class="mb-3 col-12 col-md-9">
+                                                <label class="form-label">Nome Completo:<span class="text-danger">*</span></label>
+                                                <input type="text" class="form-control input_name" required>
+                                            </div>
+                                            <div class="mb-3 col-12 col-md-3">
+                                                <label class="form-label">Idade<span class="text-danger">*</span></label>
+                                                <input type="number" class="form-control input_age" min="1" max="140">
+                                            </div>
+                                            <div class="mb-3 col-12 col-md-3">
+                                                <label class="form-label">Sexo<span class="text-danger">*</span></label>
+                                                <select class="form-select input_sex">
+                                                    <option value=""></option>
+                                                    <option value="1">Masculino</option>
+                                                    <option value="0">Feminino</option>
+                                                </select>
+                                            </div> 
+                                            <div class="mb-3 col-12 col-md-3">
+                                                <label class="form-label">Pressão Arterial em Repouso<span class="text-danger">*</span></label>
+                                                <input class="form-control input_resting_BP" type="number" placeholder="Medida em mm Hg">
+                                            </div>
+                                            <div class="mb-3 col-12 col-md-6">
+                                                <label class="form-label">Tipo de Dor no Peito<span class="text-danger">*</span></label>
+                                                <select class="form-select input_chest_pain_type">
+                                                    <option value="3">Angina Típica (TA)</option>
+                                                    <option value="1">Angina Atípica (ATA)</option>
+                                                    <option value="2">Dor Não Anginal (NAP)</option>
+                                                    <option value="0">Assintomático (ASY)</option>
+                                                </select>
+                                            </div>
+                                            <div class="mb-3 col-12 col-md-3">
+                                                <label class="form-label">Colesterol<span class="text-danger">*</span></label>
+                                                <input class="form-control input_cholesterol" type="number" placeholder="Medido em mm/dl">
+                                            </div>
+                                            <div class="mb-3 col-12 col-md-3">
+                                                <label class="form-label">Frequência Cardíaca Máxima<span class="text-danger">*</span></label>
+                                                <input class="form-control input_max_HR" type="number">
+                                            </div>
+                                            <div class="mb-3 col-12 col-md-6">
+                                                <label class="form-label">ECG em Repouso<span class="text-danger">*</span></label>
+                                                <select class="form-select input_resting_ECG">
+                                                    <option value=""></option>
+                                                    <option value="1">Normal</option>
+                                                    <option value="2">ST*</option>
+                                                    <option value="0">LVH**</option>
+                                                </select>
+                                                <span style="font-size:9px; padding:0px; margin:0px;">* anormalidades de onda ST-T</span>
+                                                <span style="font-size:9px; padding:0px; margin:0px;">** hipertrofia ventricular esquerda</span>
+                                            </div>
+                                            <div class="mb-3 col-12 col-md-3">
+                                                <label class="form-label">Angina Induzida por Exercício</label>
+                                                <select class="form-select input_exercise_Angina">
+                                                    <option value=""></option>
+                                                    <option value="1">Sim</option>
+                                                    <option value="0">Não</option>
+                                                </select>
+                                            </div>
+                                            <div class="mb-3 col-12 col-md-3">
+                                                <label class="form-label">Oldpeak<span class="text-danger">*</span></label>
+                                                <input class="form-control input_oldpeak" type="number" >
+                                            </div>
+                                            <div class="mb-3 col-12 col-md-3">
+                                                <label class="form-label">Inclinação do Segmento ST<span class="text-danger">*</span></label>
+                                                <select class="form-select input_st_Slope">
+                                                    <option value=""></option>
+                                                    <option value="1">Plano</option>
+                                                    <option value="2">Ascendente</option>
+                                                    <option value="0">Descendente</option>
+                                                </select>
+                                            </div>
+                                            <div class="mb-3 col-12 col-md-3">
+                                                <label class="form-label">Glicemia em Jejum<span class="text-danger">*</span></label>
+                                                <input class="form-control input_fasting_BS" type="number" placeholder="Indica diabetes se > 120 mg/dl">
+                                                <span style="font-size:9px; padding:0px; margin:0px;">*Indica diabetes se > 120 mg/dl, se não 0.</span>
+                                            </div>
+    
+                                        </form>
+                                    </div>
+                                </div>
+                                <hr>
+                
+                                <div class="d-flex justify-content-between align-items-center">
+                                    <h4 class="mb-0"></h4>
+                                    <a class="btn btn-primary btn-sm btn_diagnosticar" type="submit">Diagnosticar</a>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- card RESULTADO -->
+                        <div class="card rounded-3 mb-4 shadow-sm card_resultado">
+                            <!-- card header -->
+                            <div class="card-header bg-white p-4">
+                                <h3 class="mb-0 h4">Resultados</h3>
+                            </div>
+                            <!-- card body -->                             
+                            <div class="card-body" style="font-size:14px;">
+                                <table id="table_pacientes" class="table ">
+                                    <thead>
+                                        <tr>
+                                            <th style="width: 45%;">Status</th>
+                                            <th style="width: 45%;">Date</th>
+                                            <th style="width: 10%;">Date</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr class="sample_row" style="display: none;">
+                                            <td class="div_name"></td>
+                                            <td class="div_output"></td>
+                                            <td class="div_info">
+                                                <a href="" class="delete_paciente"><i class="fe fe-trash-2 font-20  me-2 text-primary"></i></a>
+                                            </td>
+                                        </tr>   
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- footer -->
+        <div class="footer bg-dark text-body">
+            <div class="container">
+                                 
+            </div>
+        </div>
+    </body>
+</html>
