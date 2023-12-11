@@ -35,7 +35,7 @@ Esta API desenvolvida em Flask para servir uma aplicação desenvolvida em HTML,
 ---
 ## Como executar 
 
-1. Faça o download do projeto.
-2. Abra o arquivo index.html no seu navegador.
+1. Seguir as instruções do README do app_api.
+2. Seguir as instruções do README do app_front.
 
 
