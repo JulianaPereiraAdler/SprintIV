@@ -9,17 +9,21 @@ As doenças cardiovasculares (DCVs) são a principal causa de morte em todo o mu
 
 Este sistema utiliza um conjunto de 918 observações, combinando dados de diversas fontes. Ele se concentra em 11 características essenciais para a previsão de doenças cardíacas:
 
-Idade: A idade do paciente em anos.
-Sexo: O sexo do paciente [M: Masculino, F: Feminino].
-Tipo de Dor no Peito: Varia entre Angina Típica (TA), Angina Atípica (ATA), Dor Não Anginal (NAP) e Assintomático (ASY).
-Pressão Arterial em Repouso: Medida em mm Hg.
-Colesterol: Medido em mm/dl.
-Glicemia em Jejum: Indica diabetes se > 120 mg/dl.
-ECG em Repouso: Inclui normal, anormalidades de onda ST-T, e hipertrofia ventricular esquerda.
-Frequência Cardíaca Máxima: Valor numérico entre 60 e 202.
-Angina Induzida por Exercício: Presença ou ausência de angina.
-Oldpeak: Depressão do segmento ST medida em milímetros.
-Inclinação do Segmento ST: Classificado como ascendente, plano ou descendente.
+Idade: A idade do paciente em anos.<br>
+Sexo: O sexo do paciente [M: Masculino, F: Feminino].<br>
+Tipo de Dor no Peito: Varia entre Angina Típica (TA), Angina Atípica (ATA), Dor Não Anginal (NAP) e Assintomático (ASY).<br>
+Pressão Arterial em Repouso: Medida em mm Hg.<br>
+Colesterol: Medido em mm/dl.<br>
+Glicemia em Jejum: Indica diabetes se > 120 mg/dl.<br>
+ECG em Repouso: Inclui normal, anormalidades de onda ST-T, e hipertrofia ventricular esquerda.<br>
+Frequência Cardíaca Máxima: Valor numérico entre 60 e 202.<br>
+Angina Induzida por Exercício: Presença ou ausência de angina.<br>
+Oldpeak: Depressão do segmento ST medida em milímetros.<br>
+Inclinação do Segmento ST: Classificado como ascendente, plano ou descendente.<br>
+
+---
+### DataSet
+Dataset => https://www.kaggle.com/datasets/fedesoriano/heart-failure-prediction
 
 ---
 ### Objetivo
